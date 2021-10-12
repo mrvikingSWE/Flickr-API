@@ -12,16 +12,13 @@
 <body>
     <header id="top">
         <body>
-            <header>
+             <header>
                 <h1 id="img"></h1>
                 <h1 id="intro">Flickr API</h1>
             </header>
-            <form id="pic-form">
-                <input type="text" id="query">
-                <button type="submit" id="search-button">Sök</button>
-            </form>
-        
-            <ul id="lista"></ul>
+            <input id="search" type="text" placeholder="search text" />
+            <button id="submit" onclick="JavaScriptFetch()">Submit</button>
+            <div id="outputDiv"></div>
             <footer>&copy; 2021 Viktor Wikström</footer>
         </body>
     <script src="app.js"></script>

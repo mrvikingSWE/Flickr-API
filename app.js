@@ -1,19 +1,39 @@
-const img = document.querySelector('#img-viewer');
-const queryInput = document.querySelector('#query');
-const searchForm = document.querySelector('#pic-form');
-const lista = document.querySelector('#lista');
 
-/*var flickr = Flickr.tokenOnly(
-{
-    api_key: "d49c9443bb420d32dfa8293e14bf1fec"
-});*/
+// var componentDidMount() =>
+// {
+//     fetch('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' +Process.env.d49c9443bb420d32dfa8293e14bf1fec+'&tags=cats&per_page=10&page=1&format=json&nojsoncallback=1')
+//     .then(function(response)
+//     {
+//         return response.json();
+//     })
+//     .then(function(j)
+//     {
+//         let picArray = j.photos.photo.map((pic) =>
+//         {
+//             var srcPath = 'https://farm'+pic.farm+'.staticflickr.com/'+pic.server+'/'+pic.id+'_'+pic.secret+'.jpg';
+//             return
+//             (
+//                 <img alt="dogs" src={srcPath}></img>
+//             )
+//         })
+//     })
+// }
 
-var settings = 
+function JavaScriptFetch() 
 {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=APIKEY&gallery_id=66911286-72157647277042064&format=json&nojsoncallback=1",
-    "method": "GET",
-    "headers": {}
+    var script = document.createElement('script');
+    script.src = "https://api.flickr.com/services/feeds/photos_public.gne?format=json&tags=" + document.getElementById("search").value;;
+    document.querySelector('head').appendChild(script)
 }
 
+function jsonFlickrFeed(data) 
+{
+    var image = "";
+    
+    data.items.forEach(function (element) 
+    {
+    image += "<img src=\"" + element.media.m + "\"/>";
+    });
+
+    document.getElementById("outputDiv").innerHTML = image;
+}
