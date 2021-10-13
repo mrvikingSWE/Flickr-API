@@ -10,17 +10,21 @@
 </head>
 
 <body>
-    <header id="top">
-        <body>
-             <header>
-                <h1 id="img"></h1>
-                <h1 id="intro">Flickr API</h1>
-            </header>
-            <input id="search" type="text" placeholder="search text" />
-            <button id="submit" onclick="JavaScriptFetch()">Submit</button>
-            <div id="outputDiv"></div>
-            <footer>&copy; 2021 Viktor Wikström</footer>
-        </body>
+    <header>
+        <span class="dot0"></span>
+        <span class="dot1"></span>
+        <h1 id="intro">
+            <span style="color: blue;">flick</span><span style="color: magenta;">r</span>
+            <span style="color: darkred">API</span>
+        </h1>
+    </header>
+    <main>
+        <input id="search" type="text" placeholder="search text.." />
+        <button id="submit" onclick="JavaScriptFetch()">search</button>
+        <div id="outputDiv"></div>
+    </main>
+    <footer>&copy; 2021 Viktor Wikström</footer>
+
     <script src="app.js"></script>
 </body>
 
